@@ -1,0 +1,30 @@
+{
+  "players": [
+    {
+      "id": "mm48auwzqtyt7g",
+      "name": "Nihar",
+      "elo": 1218,
+      "wins": 1,
+      "losses": 0
+    },
+    {
+      "id": "mm48chg14fc5v4",
+      "name": "Manudeep",
+      "elo": 1182,
+      "wins": 0,
+      "losses": 1
+    }
+  ],
+  "matches": [
+    {
+      "id": "mm48cp2y6k93gh",
+      "player1Id": "mm48auwzqtyt7g",
+      "player2Id": "mm48chg14fc5v4",
+      "player1Score": 21,
+      "player2Score": 19,
+      "player1EloChange": 18,
+      "player2EloChange": -18,
+      "date": "2026-02-27T01:45:15.514Z"
+    }
+  ]
+}
