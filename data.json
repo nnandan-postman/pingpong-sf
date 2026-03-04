@@ -3,9 +3,9 @@
     {
       "id": "mm48auwzqtyt7g",
       "name": "Nihar",
-      "elo": 1249,
+      "elo": 1227,
       "wins": 2,
-      "losses": 0
+      "losses": 1
     },
     {
       "id": "mm48chg14fc5v4",
@@ -17,12 +17,22 @@
     {
       "id": "mmbb0r8n1yjc8b",
       "name": "Harman",
-      "elo": 1169,
-      "wins": 0,
+      "elo": 1191,
+      "wins": 1,
       "losses": 1
     }
   ],
   "matches": [
+    {
+      "id": "mmbbjmc6850cxx",
+      "player1Id": "mmbb0r8n1yjc8b",
+      "player2Id": "mm48auwzqtyt7g",
+      "player1Score": 22,
+      "player2Score": 20,
+      "player1EloChange": 22,
+      "player2EloChange": -22,
+      "date": "2026-03-04T00:49:00.630Z"
+    },
     {
       "id": "mmbb1044onup03",
       "player1Id": "mmbb0r8n1yjc8b",
