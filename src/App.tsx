@@ -1,11 +1,13 @@
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import Leaderboard from "./pages/Leaderboard";
 import GameHistory from "./pages/GameHistory";
+import About from "./pages/About";
 import Admin from "./pages/Admin";
 
 const navItems = [
   { to: "/", label: "Leaderboard" },
   { to: "/games", label: "Games" },
+  { to: "/about", label: "About" },
 ];
 
 export default function App() {
@@ -13,14 +15,14 @@ export default function App() {
     <div className="min-h-screen bg-slate-900">
       {/* Header */}
       <header className="border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-2">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity shrink-0">
             <span className="text-2xl">🏓</span>
-            <h1 className="text-lg font-extrabold text-gradient leading-tight">
+            <h1 className="text-base sm:text-lg font-extrabold text-gradient leading-tight">
               Ping Postman Pong SF
             </h1>
           </Link>
-          <nav className="flex gap-1">
+          <nav className="flex gap-0.5 sm:gap-1">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -46,6 +48,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Leaderboard />} />
           <Route path="/games" element={<GameHistory />} />
+          <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
