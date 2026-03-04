@@ -3,6 +3,16 @@ import { useData } from "../DataContext";
 
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
+function isValidScore(s1: number, s2: number): boolean {
+  const high = Math.max(s1, s2);
+  const low = Math.min(s1, s2);
+  // Standard game: winner has exactly 11 or 21, no deuce
+  if ((high === 11 || high === 21) && high - low >= 2) return true;
+  // Deuce: both reached 10+ (11-pt game) or 20+ (21-pt game), winner by exactly 2
+  if (low >= 10 && high - low === 2) return true;
+  return false;
+}
+
 export default function Admin() {
   const { data, loading, addPlayer, recordMatch, deletePlayer, deleteMatch } = useData();
   const [authed, setAuthed] = useState(false);
@@ -49,8 +59,7 @@ export default function Admin() {
     const s1 = parseInt(score1);
     const s2 = parseInt(score2);
     if (isNaN(s1) || isNaN(s2) || s1 < 0 || s2 < 0 || s1 === s2) return;
-    const winScore = Math.max(s1, s2);
-    if (winScore !== 11 && winScore !== 21) return;
+    if (!isValidScore(s1, s2)) return;
 
     setSaving(true);
     setMessage(null);
@@ -241,8 +250,8 @@ export default function Admin() {
           {score1 && score2 && score1 === score2 && (
             <p className="text-red-400 text-sm">Scores can't be tied</p>
           )}
-          {score1 && score2 && score1 !== score2 && Math.max(Number(score1), Number(score2)) !== 11 && Math.max(Number(score1), Number(score2)) !== 21 && (
-            <p className="text-red-400 text-sm">Winning score must be 11 or 21</p>
+          {score1 && score2 && score1 !== score2 && !isValidScore(Number(score1), Number(score2)) && (
+            <p className="text-red-400 text-sm">Invalid score — win by 2 at deuce, or win at 11/21</p>
           )}
           <button
             type="submit"
