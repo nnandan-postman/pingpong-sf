@@ -3,8 +3,8 @@
     {
       "id": "mm48auwzqtyt7g",
       "name": "Nihar",
-      "elo": 1254,
-      "wins": 3,
+      "elo": 1283,
+      "wins": 4,
       "losses": 1
     },
     {
@@ -24,12 +24,22 @@
     {
       "id": "mmfmhj27w6xxzg",
       "name": "Shyam",
-      "elo": 1260,
+      "elo": 1231,
       "wins": 3,
-      "losses": 0
+      "losses": 1
     }
   ],
   "matches": [
+    {
+      "id": "mmfnid06muruow",
+      "player1Id": "mm48auwzqtyt7g",
+      "player2Id": "mmfmhj27w6xxzg",
+      "player1Score": 11,
+      "player2Score": 6,
+      "player1EloChange": 29,
+      "player2EloChange": -29,
+      "date": "2026-03-07T01:35:01.974Z"
+    },
     {
       "id": "mmfnc92me0o956",
       "player1Id": "mm48chg14fc5v4",
