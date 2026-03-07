@@ -10,9 +10,9 @@
     {
       "id": "mm48chg14fc5v4",
       "name": "Manudeep",
-      "elo": 1182,
+      "elo": 1158,
       "wins": 0,
-      "losses": 1
+      "losses": 2
     },
     {
       "id": "mmbb0r8n1yjc8b",
@@ -24,12 +24,22 @@
     {
       "id": "mmfmhj27w6xxzg",
       "name": "Shyam",
-      "elo": 1200,
-      "wins": 0,
+      "elo": 1224,
+      "wins": 1,
       "losses": 0
     }
   ],
   "matches": [
+    {
+      "id": "mmfmhqj9pjljgb",
+      "player1Id": "mmfmhj27w6xxzg",
+      "player2Id": "mm48chg14fc5v4",
+      "player1Score": 11,
+      "player2Score": 7,
+      "player1EloChange": 24,
+      "player2EloChange": -24,
+      "date": "2026-03-07T01:06:33.237Z"
+    },
     {
       "id": "mmbbjmc6850cxx",
       "player1Id": "mmbb0r8n1yjc8b",
