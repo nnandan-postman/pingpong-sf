@@ -17,19 +17,29 @@
     {
       "id": "mmbb0r8n1yjc8b",
       "name": "Harman",
-      "elo": 1080,
+      "elo": 1071,
       "wins": 1,
-      "losses": 5
+      "losses": 6
     },
     {
       "id": "mmfmhj27w6xxzg",
       "name": "Shyam",
-      "elo": 1294,
-      "wins": 6,
+      "elo": 1303,
+      "wins": 7,
       "losses": 1
     }
   ],
   "matches": [
+    {
+      "id": "mmpb94460yf4lo",
+      "player1Id": "mmfmhj27w6xxzg",
+      "player2Id": "mmbb0r8n1yjc8b",
+      "player1Score": 11,
+      "player2Score": 8,
+      "player1EloChange": 9,
+      "player2EloChange": -9,
+      "date": "2026-03-13T19:49:36.918Z"
+    },
     {
       "id": "mmo2ykas3bpegh",
       "player1Id": "mm48auwzqtyt7g",
