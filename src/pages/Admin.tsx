@@ -26,6 +26,7 @@ export default function Admin() {
   const [score2, setScore2] = useState("");
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [confirmDeleteMatch, setConfirmDeleteMatch] = useState<string | null>(null);
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -89,8 +90,8 @@ export default function Admin() {
   }
 
   async function handleDeleteMatch(id: string) {
-    if (!confirm("Delete this match? ELO changes will be reversed.")) return;
     setSaving(true);
+    setConfirmDeleteMatch(null);
     try {
       await deleteMatch(id);
       setMessage({ type: "success", text: "Match deleted and ELO reversed" });
@@ -328,7 +329,7 @@ export default function Admin() {
                     </span>
                   </div>
                   <button
-                    onClick={() => handleDeleteMatch(m.id)}
+                    onClick={() => setConfirmDeleteMatch(m.id)}
                     disabled={saving}
                     className="text-red-400 hover:text-red-300 text-sm font-medium disabled:opacity-50"
                   >
@@ -340,6 +341,31 @@ export default function Admin() {
           </div>
         )}
       </section>
+
+      {/* Delete match confirmation dialog */}
+      {confirmDeleteMatch && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 max-w-sm mx-4 shadow-2xl">
+            <h3 className="text-lg font-semibold text-white mb-2">Delete Match?</h3>
+            <p className="text-slate-400 text-sm mb-6">ELO changes will be reversed. This cannot be undone.</p>
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => setConfirmDeleteMatch(null)}
+                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-lg transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleDeleteMatch(confirmDeleteMatch)}
+                disabled={saving}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-500 disabled:opacity-50 rounded-lg transition-colors"
+              >
+                {saving ? "Deleting..." : "Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

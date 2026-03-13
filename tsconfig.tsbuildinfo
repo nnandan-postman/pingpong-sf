@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/datacontext.tsx","./src/elo.ts","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/pages/admin.tsx","./src/pages/gamehistory.tsx","./src/pages/leaderboard.tsx"],"version":"5.6.3"}
